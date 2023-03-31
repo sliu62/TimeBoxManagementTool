@@ -30,16 +30,23 @@ const TaskList = (props) => {
 
   // register the task to be empty string, select a cell, and it will remove the registered task on the schedule
   const eraseTask = () => {
-    props.setRegisteredTask("");
+    props.setRegisteredTask({
+      taskName: "",
+      topPriority: false,
+    });
   };
 
   // delete a current task from the tasks list
   const deleteTask = (currentTask) => {
-    props.setRegisteredTask(null);
+    props.setRegisteredTask({
+      taskName: "",
+      topPriority: false,
+    });
     const updatedList = tasks.filter(
       (task) => task.taskName !== currentTask.taskName
     );
     setTasks(updatedList);
+    setDeleteMode();
   };
 
   const triggerDeleteMode = () => {
@@ -103,7 +110,8 @@ const TaskList = (props) => {
             marginBottom: "1em",
             fontSize: "1.25em",
             fontWeight: "bold",
-            borderColor: props.registeredTask === "" ? "red" : "#3498db",
+            borderColor:
+              props.registeredTask.taskName === "" ? "red" : "#3498db",
           }}
           info={
             <span style={{ textAlign: "center" }}>
