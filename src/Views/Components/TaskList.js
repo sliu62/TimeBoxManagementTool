@@ -8,6 +8,7 @@ import {
   faEraser,
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
+import DateDisplay from "./DateDisplay";
 
 const TaskList = (props) => {
   const [tasks, setTasks] = useState([]);
@@ -79,6 +80,9 @@ const TaskList = (props) => {
   return (
     <div style={Styles.frame}>
       <div style={Styles.childFlexControl}>
+        <div style={Styles.displayDate}>
+          <DateDisplay />
+        </div>
         {tasks.length <= 0 && (
           <p
             style={{ fontSize: "1em", fontWeight: "bold", textAlign: "center" }}

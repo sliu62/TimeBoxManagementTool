@@ -100,7 +100,7 @@ const Styles = {
   frame: {
     // border: "0.2em solid black",
     // borderRadius: "1em",
-    // width: "100%",
+    //width: "100%",
     display: "flex",
     justifyContent: "center",
     alignContent: "center",
@@ -123,6 +123,7 @@ const Styles = {
   table: {
     width: "20%",
     textAlign: "center",
+    fontSize: "1em",
   },
   TouchableTextBoxStyle: {
     width: "15em",
