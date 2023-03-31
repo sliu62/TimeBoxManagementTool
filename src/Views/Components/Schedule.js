@@ -7,13 +7,15 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 const Schedule = (props) => {
   // if a task has been selected from the task side, add it to the time slot, and it will append to the state
   const registerTask = (event) => {
-    const updatedSchedule = props.timeslots.map((schedule) => {
-      if (schedule.time === event.currentTarget.name) {
-        return { ...schedule, task: props.registeredTask };
-      }
-      return schedule;
-    });
-    props.setTimeSlots(updatedSchedule);
+    if (props.registeredTask !== null) {
+      const updatedSchedule = props.timeslots.map((schedule) => {
+        if (schedule.time === event.currentTarget.name) {
+          return { ...schedule, task: props.registeredTask };
+        }
+        return schedule;
+      });
+      props.setTimeSlots(updatedSchedule);
+    }
   };
 
   // render the list of schedule when first load or being updated
