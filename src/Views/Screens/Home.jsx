@@ -5,6 +5,8 @@ import TaskList from "../Components/TaskList";
 import Schedule from "../Components/Schedule";
 import Header from "../Components/Header";
 
+import scheduleSchma from "../../Resources/data/scheduleSchema.json";
+
 const Home = () => {
   const [registeredTask, setRegisteredTask] = useState({
     taskName: "",
@@ -16,7 +18,7 @@ const Home = () => {
 
   // load the schedule schema from the json file then render the schema
   useEffect(() => {
-    setTimeSlots(require("../../Resources/data/scheduleSchema.json"));
+    setTimeSlots(scheduleSchma);
   }, []);
 
   return (
